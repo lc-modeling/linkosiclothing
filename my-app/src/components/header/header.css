@@ -1,0 +1,161 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
+
+/* Header styling */
+header {
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 30px;
+}
+
+/* Protest Guerrilla font for h2 */
+h2 {
+  font-family: "Protest Guerrilla", sans-serif;
+  font-size: 24px;
+  transition: font-size 0.3s ease;
+}
+
+/* Gowun Batang for all other text */
+.gowun-batang-regular {
+  font-family: "Gowun Batang", serif;
+  font-weight: 400;
+}
+
+.desktop-nav a {
+  margin-right: 20px;
+  color: #000;
+  font-size: 1.5rem;
+  text-decoration: none;
+  
+}
+
+.desktop-nav a:hover {
+  color: #ff4081;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+/* Hamburger menu */
+.hamburger-container {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger-icon {
+  font-size: 2rem;
+  transition: transform 0.3s ease-in-out;
+  color: #000;
+}
+
+.hamburger-icon.open {
+  transform: rotate(90deg);
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.mobile-nav.is-active {
+  display: flex;
+}
+
+.mobile-nav a {
+  font-size: 24px;
+  margin: 15px 0;
+  text-decoration: none;
+  color: #000;
+  font-family: "Gowun Batang", serif;
+}
+
+.mobile-nav a:hover {
+  color: #ff4081;
+}
+
+.mobile-nav .icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.close-menu {
+  font-size: 36px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.close-menu:hover {
+  color: #ff4081;
+  transform: rotate(90deg) scale(1.2);
+}
+
+.is-scrolling {
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent */
+  padding: 1px 20px; /* Smaller padding when scrolling */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Darker shadow when scrolling */
+}
+
+header.is-scrolling h2 {
+  font-size: 20px; /* Shrink text size when scrolling */
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger-container {
+    display: block;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 101;
+  }
+
+  .hamburger-icon {
+    font-size: 2.5rem; /* Larger icon for mobile */
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger-container {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+}
